@@ -42,7 +42,7 @@ fun main(args: Array<String>) {
     // Testing calculateFee function
     val carPrueba = Vehicle("A222BBB", VehicleType.MOTORCYCLE, Calendar.getInstance())
     val parkingSpace = ParkingSpace(carPrueba, parking)
-    println(parkingSpace.calculateFee(carPrueba.type, 110))
+    println(parkingSpace.calculateFee(carPrueba.type, 300, true))
 
 
 }
