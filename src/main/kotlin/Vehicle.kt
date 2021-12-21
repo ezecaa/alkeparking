@@ -1,7 +1,6 @@
 import java.util.*
 
-data class Vehicle (val plate: String, val type: VehicleType, val checkInTime: Calendar, val discountCard: String = "NO_DISCOUNT"){
-
+data class Vehicle(val plate: String, val type: VehicleType, val checkInTime: Calendar, val discountCard: String = "NO_DISCOUNT"){
 
 
     override fun equals(other: Any?): Boolean {
