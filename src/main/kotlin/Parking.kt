@@ -8,4 +8,20 @@ class Parking(var vehicles: MutableSet<Vehicle>) {
             vehicles.add(vehicle)
         } else false
     }
+
+    // Exercise 11
+    var earnings: Pair<Int, Int> = Pair(0, 0)
+
+    fun increase(parkedTicket: Int): Unit {
+        earnings = Pair(earnings.first + 1, earnings.second + parkedTicket)
+        println("${earnings.first} vehicles have checked out and have earnings of $ ${earnings.second}")
+    }
+
+    fun listVehicle() {
+        println("Vehicles parcked")
+        println("----------------")
+        for (vehicle in vehicles){
+        println(vehicle.plate)
+      }
+    }
 }
