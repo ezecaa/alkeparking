@@ -18,7 +18,7 @@ class Parking(var vehicles: MutableSet<Vehicle>) {
     }
 
     fun listVehicle() {
-        println("Vehicles parcked")
+        println("Parked Vehicles")
         println("----------------")
         for (vehicle in vehicles){
         println(vehicle.plate)

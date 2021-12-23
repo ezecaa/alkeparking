@@ -8,10 +8,10 @@ class ParkingSpace(var vehicle: Vehicle, val parking: Parking) {
     val parkedTime: Long
         get() = (Calendar.getInstance().timeInMillis - vehicle.checkInTime.timeInMillis) / MINUTES_IN_MILISECONDS
 
-    //onSuccess: (Int) -> Int, onError: (Unit) -> Unit
+
     fun checkOutVehicle(plate: String) {
-        if (parking.vehicles.contains(vehicle)) {
-            //mantener referencia del vehicle
+        val vehicle = parking.vehicles.find { it.plate == plate }
+        if (vehicle!=null) {
             val discount = (vehicle.discountCard != "NO_DISCOUNT")
             onSuccess(calculateFee(vehicle.type, parkedTime.toInt(), discount))
             parking.increase(calculateFee(vehicle.type, parkedTime.toInt(), discount))
